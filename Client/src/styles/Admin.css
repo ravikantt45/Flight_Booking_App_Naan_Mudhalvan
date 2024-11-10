@@ -1,0 +1,100 @@
+.admin-page{
+
+    margin-top: 15vh;
+    height: fit-content;
+}
+
+.admin-page-cards{
+
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+.admin-card{
+
+    padding: 3vh 2vw;
+    text-align: center;
+    width: 20vw;
+    height: 150px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.admin-card:hover{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+.admin-card h4{
+    margin: 0;
+
+}
+
+.admin-card p{
+
+    margin: 0;
+}
+
+
+.admin-requests-container{
+
+    margin: 10vh 0 3vh 3vw;
+    border: 1px solid #1918182b;
+    width: 70%;
+    padding: 2vh 2vw;
+}
+
+.admin-requests-container h3{
+
+    color: rgb(55, 84, 108);
+
+}
+
+.admin-requests{
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 4vh;
+    height: 30vh;
+    overflow-y: scroll;
+    margin-left: 2vw;
+}
+
+.admin-request{
+    display: flex;
+    align-items: center;
+    gap: 45px;
+    background-color: rgba(241, 242, 244, 0.566);
+    border: 1px solid #e7e3e3d6;
+    padding: 15px 25px;
+    margin-right: 10px;
+    border-radius: 0.8rem;
+}
+
+.admin-request span{
+
+    display: flex;
+    flex-direction: column;
+}
+
+.admin-request span b{
+    font-weight: 700;
+    color: rgb(67, 89, 107);
+}
+
+
+
+.admin-request-actions{
+
+    display: flex;
+    gap: 30px;
+}
+.admin-request-actions button{
+    width: 7rem;
+}

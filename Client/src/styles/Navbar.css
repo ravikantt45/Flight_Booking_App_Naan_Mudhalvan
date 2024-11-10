@@ -1,0 +1,34 @@
+.navbar{
+
+    height: 10vh;
+    width: 100%;
+    position: fixed;
+    top: 0vh;
+    z-index: 10;
+    background-color: rgb(28, 82, 126) !important;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 3%;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.navbar h3{
+    color: aliceblue;
+}
+
+.nav-options{
+    display: flex;
+    gap: 20px;
+}
+
+.nav-options p{
+    margin: 0;
+    color: rgb(209, 210, 211);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.nav-options p:hover{
+    color: aliceblue;
+}
