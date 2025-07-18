@@ -7,16 +7,22 @@ const userSchema = new mongoose.Schema({
     password: { type: String, required: true },
     approval: {type: String, default: 'approved'}
 });
+
 const flightSchema = new mongoose.Schema({
-    flightName: { type: String, required: true },
-    flightId: { type: String, required: true },
-    origin: { type: String, required: true },
-    destination: { type: String, required: true },
-    departureTime: { type: String, required: true },
-    arrivalTime: { type: String, required: true },
-    basePrice: { type: Number, required: true },
-    totalSeats: { type: Number, required: true }
+    flightName: String,
+    flightId: String,
+    origin: String,
+    destination: String,
+    departureTime: String,
+    arrivalTime: String,
+    basePrice: Number,
+    totalSeats: Number,
+    createdBy: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User",  // reference to User model
+    }
 });
+
 const bookingSchema = new mongoose.Schema({
     user: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
     flight: { type: mongoose.Schema.Types.ObjectId, ref: 'Flight', required: true },
