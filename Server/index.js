@@ -15,7 +15,7 @@ app.use(cors());
 // mongoose setup
 
 const PORT = 6001;
-mongoose.connect('mongodb+srv://ravikant59826:Samrat123@cluster0.vstrf.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0', { 
+mongoose.connect('mongodb+srv://ravikant59826:Samrat123@cluster0.rh9vv.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0', { 
         // useNewUrlParser: true,
         // useUnifiedTopology: true,
     },
@@ -138,21 +138,33 @@ mongoose.connect('mongodb+srv://ravikant59826:Samrat123@cluster0.vstrf.mongodb.n
 
     // Add flight
 
-    app.post('/add-flight', async (req, res)=>{
-        const {flightName, flightId, origin, destination, departureTime, 
-                                arrivalTime, basePrice, totalSeats} = req.body;
-        try{
+    app.post('/add-flight', async (req, res) => {
+    const { flightName, flightId, origin, destination, departureTime, 
+            arrivalTime, basePrice, totalSeats, createdBy } = req.body;
 
-            const flight = new Flight({flightName, flightId, origin, destination, 
-                                        departureTime, arrivalTime, basePrice, totalSeats});
-            const newFlight = flight.save();
+    try {
+        const flight = new Flight({
+            flightName,
+            flightId,
+            origin,
+            destination,
+            departureTime,
+            arrivalTime,
+            basePrice,
+            totalSeats,
+            createdBy
+        });
 
-            res.json({message: 'flight added'});
+        await flight.save();
 
-        }catch(err){
-            console.log(err);
-        }
-    })
+        res.json({ message: 'Flight added successfully' });
+
+    } catch (err) {
+        console.log("Error in adding flight:", err);
+        res.status(500).json({ message: "Server error while adding flight" });
+    }
+});
+
 
     // update flight
     
